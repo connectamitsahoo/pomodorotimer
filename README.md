@@ -15,3 +15,7 @@ This app helps you stay focused and productive by breaking your work into 25-min
 ## 🛠️ Tech Stack
 
 - Frontend: HTML, CSS, JavaScript
+
+## 🌐 Live Demo
+
+[Try it here](https://connectamitsahoo.github.io/pomodorotimer/)
