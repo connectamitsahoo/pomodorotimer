@@ -1,0 +1,351 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #f6f7fb;
+    --bg-secondary-color: #ffffff;
+    --bg-min: #eaeefb;
+    --text-color: #1e1e1e;
+    --accent-color: #6b5cff;
+    /* Purple from Swipe to Pay */
+    --primary-button-color: #6b5cff;
+    --card-highlight-color: #fbd06b;
+}
+
+.dark {
+    --bg-color: #1e1e2f;
+    --bg-secondary-color: #2c2f47;
+    --bg-min: #313654;
+    --text-color: #ffffff;
+    --accent-color: #8573ff;
+    /* Lighter purple for dark mode */
+    --primary-button-color: #8573ff;
+    --card-highlight-color: #fbd06b;
+}
+
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+}
+
+body,
+.scale-container,
+.timer-face .time,
+.controls .btn {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+
+input[type='checkbox'] {
+    opacity: 0;
+    display: none;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+input[type='checkbox']:checked+.switcher-label .switcher-toggler {
+    left: calc(100% - 30px);
+    transform: translateY(-50%) rotate(180deg);
+}
+
+input[type='checkbox']:checked+.switcher-label {
+    /* background: #1c2122; */
+    background: linear-gradient(135deg, #1e293b, #3f3cbb);
+
+}
+
+/*label*/
+.switcher-label {
+    background: linear-gradient(135deg, #aee1f9, #e0f7ff);
+    cursor: pointer;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+    padding: 2px 10px;
+    height: auto;
+    min-height: 38px;
+    border-radius: 30px;
+    position: relative;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/*toggler*/
+.switcher-label .switcher-toggler {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    width: 25px;
+    height: 25px;
+    z-index: 1;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    left: 8%;
+    /* top: 15%; */
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+}
+
+
+/*sun and moon images*/
+.switcher-label i {
+    font-size: 18px;
+    color: #fff;
+}
+
+.container {
+    width: 100%;
+    height: auto;
+    margin: 100px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h1 {
+    color: var(--text-color);
+}
+
+.scale-container {
+    width: 500px;
+    height: 300px;
+    background-color: var(--bg-secondary-color);
+    border-radius: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.fade-left,
+.fade-right {
+    position: absolute;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.fade-left {
+    left: 0;
+    background: linear-gradient(to right, var(--bg-secondary-color), transparent);
+}
+
+.fade-right {
+    right: 0;
+    background: linear-gradient(to left, var(--bg-secondary-color), transparent);
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 20px solid var(--bg-min);
+    margin-bottom: 10px;
+}
+
+.scale {
+    display: flex;
+    justify-content: center;
+}
+
+.line {
+    width: 10px;
+    height: 25px;
+    /* background-color: #8766fd; */
+    background-color: var(--accent-color);
+    margin-left: 5px;
+    margin-right: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.line.small {
+    width: 5px;
+    height: 20px;
+    border-radius: 5px;
+}
+
+.line:hover {
+    transform: scale(.9);
+}
+
+.scroll-track {
+    display: flex;
+    left: 0;
+    top: 0;
+    height: 100%;
+}
+
+.timer-face {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.timer-face .time {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--text-color);
+    background-color: var(--bg-min);
+    border-radius: 12px;
+    width: auto;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.controls {
+    margin-top: 30px;
+}
+
+.controls .btn {
+    background-color: var(--primary-button-color);
+    color: #fff;
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.2s ease;
+}
+
+.controls .btn:hover {
+    background-color: #5b4cdf;
+}
+
+.controls .btn:not(:disabled):active {
+    transform: scale(0.95);
+}
+
+.controls .btn:disabled {
+    background-color: #e7e3fc;
+    color: #c4c4c0;
+}
+
+.dark .controls .btn:disabled {
+    background-color: #10253a;
+    color: #7f63f5;
+}
+
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+    body {
+        padding: 0 1rem;
+    }
+
+    .switcher-label {
+        width: 60px;
+        min-height: 32px;
+        padding: 2px 6px;
+    }
+
+    .switcher-label i {
+        font-size: 14px;
+    }
+
+    .switcher-toggler {
+        width: 20px;
+        height: 20px;
+        top: 18%;
+    }
+
+    .container {
+        padding: 0.5rem;
+    }
+
+    .scale-container {
+        width: 100%;
+    }
+
+    .timer-face .time {
+        font-size: 1.5rem;
+    }
+
+    .btn {
+        width: 100%;
+        font-size: 1rem;
+        padding: 0.6rem;
+    }
+
+    .scale {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .scroll-track {
+        transform: scale(0.9);
+    }
+
+    .fade-left,
+    .fade-right {
+        display: none;
+        /* optional for better mobile view */
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 1rem 0rem;
+    }
+
+    .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .header p {
+        font-size: 0.8rem;
+    }
+
+    .timer-face .time {
+        font-size: 1rem;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .switcher-toggler {
+        width: 18px;
+        height: 18px;
+    }
+}

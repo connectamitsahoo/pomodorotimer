@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <meta name="description" content="A simple Pomodoro timer with a 25-minute focus session to help you stay productive using the Pomodoro Technique.">
+    <meta name="keywords" content="Pomodoro, timer, productivity, focus, task, study">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body class="dark">
+    <header class="header">
+        <div>
+            <h1 style="margin: 0;">Pomodoro</h1>
+            <p style="margin: 0; font-size: 0.9rem;">Stay focused. Stay productive.</p>
+        </div>
+        <div class="header-icons">
+            <input type="checkbox" name="switcher" id="switcher-input" class="switcher-input" checked>
+            <label class="switcher-label" for="switcher-input" id="themeToggle">
+                <i class='fas fa-solid fa-moon'></i>
+                <span class="switcher-toggler"></span>
+                <i class='fas fa-solid fa-sun'></i>
+            </label>
+        </div>
+    </header>
+    <div class="container">
+        <div class="scale-container">
+            <div class="timer-face">
+                <div class="time" id="time">25:00</div>
+                <div class="triangle"></div>
+            </div>
+            <div class="scale">
+                <div class="fade-left"></div>
+                <div class="fade-right"></div>
+                <div class="scroll-track" id="scroll-track"></div>
+            </div>
+            <div class="controls">
+                <button class="btn" id="btnStart" onclick="startTimer()">Start</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/app.js"></script>
+</body>
+
+</html>
