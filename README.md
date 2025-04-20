@@ -18,4 +18,5 @@ This app helps you stay focused and productive by breaking your work into 25-min
 
 ## 🌐 Live Demo
 
-[Try it here](https://connectamitsahoo.github.io/pomodorotimer/)
+<a href="https://connectamitsahoo.github.io/pomodorotimer/" target="_blank" rel="noopener noreferrer">Try it here</a>
+
